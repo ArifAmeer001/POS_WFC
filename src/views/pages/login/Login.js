@@ -19,12 +19,13 @@ import UsersService from 'src/services/user_services';
 import 'primereact/resources/primereact.min.css'; 
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import { Toast } from 'primereact/toast';
-
+import ParticleBg from 'src/components/ParticleBg';
 
 
 
 
 const Login = () => {
+  
   const navigate = useNavigate();
   const toast = useRef(null);
   const [email, setEmail] = useState('');
@@ -76,7 +77,9 @@ const Login = () => {
       });
   };
   return (
-    <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
+    <>
+    <ParticleBg></ParticleBg>
+    <div className="min-vh-100 d-flex flex-row align-items-center">
       <Toast ref={toast} />
       <CContainer>
         <CRow className="justify-content-center">
@@ -141,6 +144,7 @@ const Login = () => {
         </CRow>
       </CContainer>
     </div>
+    </>
   )
 }
 
